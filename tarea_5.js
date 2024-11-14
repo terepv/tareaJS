@@ -16,5 +16,5 @@ function promedioNotas(notas) { // se define la funcion de promedio de las notas
 
 // Ejemplo de uso y pruebas en consola
 const notas = [6, 8, 9, 2, 5, 10]; // arreglo de notas de la tarea [6,8,9,2,5,10]
-console.log("Suma de notas:", SumaNotas(notas)); // se llama a la función de sumaNotas y toma el arreglo anterior para conseguir el resultado: Suma de notas correcta= 40
+console.log("Suma de notas:", sumaNotas(notas)); // se llama a la función de sumaNotas y toma el arreglo anterior para conseguir el resultado: Suma de notas correcta= 40
 console.log("Promedio de notas:", promedioNotas(notas)); // se llama a la función promedioNotas el cual usa sumaNotas y el largo del arreglo (notas) para calcular el resultado: Promedio de notas correcto= 40/6 = 6,666...
