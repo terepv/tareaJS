@@ -31,7 +31,7 @@ for (let i = 0; i <= 1000; i++) { // el ciclo parte de la misma condición que e
 
 // 2.- Del siguiente arreglo de strings retornar otro arreglo con todo a mayúsculas.
 
-let pokemon = [ // array original
+let pokEmon = [ // array original, puse mayuscula a "pokEmon" para no generar conflicto con el siguiente ejercicio
    'Pikachu',
    'Charmander',
    'Bulbasaur',
@@ -39,7 +39,7 @@ let pokemon = [ // array original
 ];
 
 // Convertir los nombres a mayúsculas
-let pokemonesMayusculas = pokemon.map(function(nombre) { // se usa map para aplicar una función al array original, creando un nuevo array y se define que los elementos del array original se representan por "nombre"
+let pokemonesMayusculas = pokEmon.map(function(nombre) { // se usa map para aplicar una función al array original, creando un nuevo array y se define que los elementos del array original se representan por "nombre"
     return nombre.toUpperCase(); // se toman los nombres y se le aplica la función toUpperCase de js para transformarlos a mayusuclas y retornar el nuevo array
 });
 
