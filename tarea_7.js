@@ -16,14 +16,15 @@ const products = [
 
 // 1. Filtrar Productos con Descuento: Usa filter para obtener un nuevo array con los productos que tienen un descuento aplicado (es decir, discount > 0).
 const productosConDescuento = products.filter(product => product.discount > 0);
-console.log("Productos con descuento:", productosConDescuento);
+console.log("1. Productos con descuento:", productosConDescuento);
 
 // 2. Calcular el Precio Final con Descuento: Usa map para calcular el precio final de los productos que tienen descuento y crea un nuevo array que incluya el priceAfterDiscount.
+// Nota de interpretación: Estoy tomando los descuentos como porcentaje.
 const productsWithPriceAfterDiscount = productosConDescuento.map(product => {
-  const priceAfterDiscount = product.price - (product.price * product.discount / 100);
+  const priceAfterDiscount = product.price - (product.price * product.discount / 100); // esta linea transforma el porcentaje de descuento a decimal para luego restarlo del precio original y calcular el precio con el descuento aplicado
   return { ...product, priceAfterDiscount };
 });
-console.log("Productos con precio después del descuento:", productsWithPriceAfterDiscount);
+console.log("2. Productos con precio después del descuento:", productsWithPriceAfterDiscount);
 
 // 3. Identificar Productos con Stock Bajo: Usa un bucle para identificar los productos con menos de 5 unidades en inventario y guárdalos en un array nuevo.
 const productosStockBajo = [];
@@ -32,7 +33,7 @@ for (const product of products) {
     productosStockBajo.push(product);
   }
 }
-console.log("Productos con bajo stock:", productosStockBajo);
+console.log("3. Productos con bajo stock:", productosStockBajo);
 
 // 4. Actualizar el Stock de un Producto: Crea una función que reciba el nombre de un producto y una cantidad a agregar. 
 //Usa un try...catch para verificar si el producto existe en el array. Si existe, incrementa su stock; si no, lanza un error.
@@ -42,7 +43,7 @@ function actualizarStock(productName, quantityToAdd) {
     const product = products.find(product => product.name === productName);
     if (!product) throw new Error("Producto no encontrado");
     product.stock += quantityToAdd;
-    console.log(`Stock actualizado:`, product);
+    console.log(`4. Stock actualizado:`, product);
   } catch (error) {
     console.error(error.message);
   }
@@ -60,4 +61,4 @@ for (const product of products) {
   }
   resumenPorCategoria[product.category]++;
 }
-console.log("Resumen por categorías:", resumenPorCategoria);
+console.log("5. Resumen por categorías:", resumenPorCategoria);
